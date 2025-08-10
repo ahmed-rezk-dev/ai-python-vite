@@ -5,14 +5,14 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
-    "fastapi[all]>=0.116.1",
-    "ipython>=9.4.0",
-    "psycopg2-binary>=2.9.10",
-    "python-dotenv>=1.1.1",
-    "sqlalchemy>=2.0.42",
-    "uvicorn>=0.35.0",
+  "fastapi[all]>=0.116.1",
+  "ipython>=9.4.0",
+  "psycopg2-binary>=2.9.10",
+  "python-dotenv>=1.1.1",
+  "sqlalchemy>=2.0.42",
+  "uvicorn>=0.35.0",
 ]
 [tool.pyright]
-venvPath = "."
+venvPath = "./"
 venv = ".venv"
 dependencies = ["ollama>=0.5.2"]
