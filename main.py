@@ -1,56 +1,24 @@
-from ollama import ChatResponse, Client
-from IPython.display import display, Markdown
-import json
+from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-client = Client(
-    host="http://192.168.50.252:11434", headers={"x-some-header": "some-value"}
+
+app = FastAPI(
+    title="Python AI Tutoriles",
+    description="Project to learn AI using python & FastAPI",
+    version="0.1.0",
+    docs_url="/docs",
+    redoc_url="/redoc",
 )
 
-
-friends_list = ["Tommy", "Isabel", "Daniel"]
-list_of_tasks = [
-    "Compose a brief email to my boss explaining that I will be late for tomorrow's meeting.",
-    "Write a birthday poem for Otto, celebrating his 28th birthday.",
-    "Write a 300-word review of the movie 'The Arrival'.",
-]
-
-ice_cream_flavors = ["Chocolate", "Mint Chocolate Chip"]
-
-food_preferences_tommy = {
-    "dietary_restrictions": "vegetarian",
-    "favorite_ingredients": ["tofu", "olives"],
-    "experience_level": "intermediate",
-    "maximum_spice_level": 6,
-}
-
-prompt = f"""Please suggest a rescipe taht tries to include the following ingredients: {food_preferences_tommy["favorite_ingredients"]}
-The recipe should adhere to the following dietary restrictions: {food_preferences_tommy["dietary_restrictions"]}
-The difficulty of the recipe should be: {food_preferences_tommy["experience_level"]}
-The maximum spice level on a scale of 10 should be: {food_preferences_tommy["maximum_spice_level"]}
-Provide a two sentence description
-"""
-
-response: ChatResponse = client.chat(
-    model="llama3:latest",
-    messages=[
-        {
-            "role": "user",
-            "content": prompt,
-        },
-    ],
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
 )
-
-# Reading Markdown
-file = open("./baking.md")
-recipe = file.read()
-# __AUTO_GENERATED_PRINT_VAR_START__
-print(f" recipe: {display(Markdown(recipe))}")  # __AUTO_GENERATED_PRINT_VAR_END__
-file.close()
-
-
-def main():
-    print("Hello from ai-python!")
-
 
 if __name__ == "__main__":
-    main()
+    import uvicorn
+
+    uvicorn.run("main:app", host="0.0.0.0", port=8000, reload=True)
