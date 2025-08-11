@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
+from core.config import settings
+from routers import firstAI
+
 
 app = FastAPI(
     title="Python AI Tutoriles",
@@ -12,11 +15,13 @@ app = FastAPI(
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=settings.ALLOWED_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(firstAI.router, prefix=settings.API_PREFIX)
 
 if __name__ == "__main__":
     import uvicorn

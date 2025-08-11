@@ -11,4 +11,6 @@ def get_session_id(session_id: Optional[str] = Cookie(None)):
         session_id = str(uuid.uuid4())
 
 
-# @router.get('/', response_model=AIJobRes)
+@router.get("/", response_model=None)
+def get():
+    return ""
