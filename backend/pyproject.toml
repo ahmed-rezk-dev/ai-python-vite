@@ -5,14 +5,69 @@ description = "Add your description here"
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+  "chromadb>=1.0.20",
   "fastapi[all]>=0.116.1",
   "ipython>=9.4.0",
+  "langchain>=0.3.27",
+  "langchain-community>=0.3.27",
+  "langchain-nomic>=0.1.4",
+  "langchain-ollama>=0.3.6",
+  "langchainhub>=0.1.21",
+  "langgraph>=0.6.6",
+  "nomic[local]>=3.5.3",
+  "ollama>=0.5.3",
   "psycopg2-binary>=2.9.10",
   "python-dotenv>=1.1.1",
+  "ruff>=0.12.9",
   "sqlalchemy>=2.0.42",
+  "tiktoken>=0.11.0",
   "uvicorn>=0.35.0",
 ]
 [tool.pyright]
 venvPath = "./"
 venv = ".venv"
 dependencies = ["ollama>=0.5.2"]
+[tool.ruff]
+line-length = 180
+
+[tool.ruff.lint]
+
+ignore = [
+  "E501", # Never enforce `E501` (line length violations), which can be trivial.
+  "D103", # missing-module-docstring
+]
+select = [
+  "C",   # Convention violations, like coding standards issues (PEP8)
+  "E",   # Errors that could cause exceptions or major functionality issues
+  "F",   # Flaws in type annotations
+  "I",   # Import-related linting issues
+  "W",   # Warnings for stylistic or minor programming issues
+  "PL",  # PyLint checks, including unused function variables
+  "N",   # Naming convention checks (PEP8)
+  "D",   # Docstring style checks, often based on Google's style guidelines
+  "UP",  # Checks for deprecated Python features that could be upgraded
+  "FIX", # Reminder tags for TODOs and FIXMEs in the code
+]
+pydocstyle.convention = "google"
+
+
+# Ignore import violations in all `__init__.py` files.
+[tool.ruff.lint.per-file-ignores]
+"__init__.py" = ["E402", "F401", "F403", "F811"]
+
+[tool.ruff.format]
+# Like Black, use double quotes for strings.
+quote-style = "double"
+
+# Like Black, indent with spaces, rather than tabs.
+indent-style = "space"
+
+# Like Black, respect magic trailing commas.
+skip-magic-trailing-comma = false
+
+# Like Black, automatically detect the appropriate line ending.
+line-ending = "auto"
+
+[tool.isort]
+profile = "black"
+lines_after_imports = 2

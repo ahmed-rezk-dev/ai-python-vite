@@ -2,7 +2,7 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from core.config import settings
-from routers import firstAI
+from routers import email, firstAI
 
 
 app = FastAPI(
@@ -22,6 +22,7 @@ app.add_middleware(
 )
 
 app.include_router(firstAI.router, prefix=settings.API_PREFIX)
+app.include_router(email.router, prefix=settings.API_PREFIX)
 
 if __name__ == "__main__":
     import uvicorn
