@@ -13,6 +13,7 @@ dependencies = [
   "langchain-nomic>=0.1.4",
   "langchain-ollama>=0.3.6",
   "langchainhub>=0.1.21",
+  "langfuse>=3.3.0",
   "langgraph>=0.6.6",
   "nomic[local]>=3.5.3",
   "ollama>=0.5.3",
@@ -34,7 +35,7 @@ line-length = 180
 
 ignore = [
   "E501", # Never enforce `E501` (line length violations), which can be trivial.
-  "D103", # missing-module-docstring
+  # "D103", # missing-module-docstring
 ]
 select = [
   "C",   # Convention violations, like coding standards issues (PEP8)
