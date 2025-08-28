@@ -57,6 +57,13 @@ This document outlines a structured learning path to develop expertise in agenti
 - [ ] Decision-making frameworks and workflows
 - [ ] Multi-agent collaboration strategies
 
+#### Resources
+
+- [ ] <https://huggingface.co/learn/agents-course/unit0/introduction>
+- [ ] <https://academy.langchain.com/courses/intro-to-langgraph>
+- [ ] <https://www.anthropic.com/engineering/building-effective-agents>
+- [ ] <https://blog.apify.com/how-to-build-an-ai-agent/?utm_source=reddit&utm_content=ai_agents>
+
 ### 6. AI Memory & Knowledge Retrieval
 
 - [ ] Understand how agents store and retrieve knowledge to make informed decisions
@@ -90,6 +97,10 @@ This document outlines a structured learning path to develop expertise in agenti
 - [ ] Use embeddings and search engines
 - [ ] Expand agent context using hybrid AI
 - [ ] Enhance memory and factual consistency
+
+#### Resources
+
+- [ ] <https://langchain-ai.github.io/langgraph/tutorials/rag/langgraph_self_rag_local/#local-llm>
 
 ### 11. Deploying AI Agents
 
