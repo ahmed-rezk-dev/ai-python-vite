@@ -28,6 +28,9 @@ This document outlines a structured learning path to develop expertise in agenti
 ### 2. Fundamentals of AI & ML
 
 - [ ] Strengthen your foundation in AI and machine learning
+  - [ ] <https://www.youtube.com/watch?v=dbUIjFXIpis>
+  - [ ] <https://www.youtube.com/watch?v=JV3pL1_mn2M&pp=0gcJCbIJAYcqIYzv>
+  - [ ] <https://www.youtube.com/watch?v=OOO_x3Oh2nE>
 - [ ] Supervised vs. unsupervised learning
 - [ ] Neural networks and deep learning
 - [ ] Reinforcement learning concepts
